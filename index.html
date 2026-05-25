@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lara Ferrari — CX Engineer & Automation Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #e8e1c8;
+    --sage: #a0b29e;
+    --orange: #dd7e46;
+    --blue: #5b96a9;
+    --gold: #ffbd59;
+    --forest: #627962;
+    --deep-orange: #d96e30;
+    --teal: #3e7586;
+    --amber: #e08d26;
+    --dark: #202020;
+    --white: #faf8f3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  .page {
+    width: 794px;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--dark);
+    padding: 52px 52px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: var(--orange);
+    opacity: 0.15;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 30%;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: var(--teal);
+    opacity: 0.12;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 28px;
+  }
+
+  .name-block {}
+
+  .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .name span {
+    color: var(--orange);
+  }
+
+  .title {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-top: 10px;
+  }
+
+  .contact-block {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 8px;
+  }
+
+  .contact-item {
+    font-size: 12px;
+    color: var(--cream);
+    opacity: 0.75;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: flex-end;
+  }
+
+  .contact-item .dot {
+    width: 4px;
+    height: 4px;
+    background: var(--orange);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--cream);
+    opacity: 0.65;
+    border-top: 1px solid rgba(232,225,200,0.15);
+    padding-top: 20px;
+    line-height: 1.6;
+    max-width: 600px;
+  }
+
+  .pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .pill {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 100px;
+    border: 1px solid;
+  }
+
+  .pill-orange { color: var(--orange); border-color: var(--orange); }
+  .pill-teal { color: var(--teal); border-color: var(--teal); }
+  .pill-sage { color: var(--sage); border-color: var(--sage); }
+  .pill-gold { color: var(--gold); border-color: var(--gold); }
+
+  /* BODY LAYOUT */
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 268px;
+  }
+
+  /* MAIN COLUMN */
+  .main {
+    padding: 44px 44px 44px 52px;
+    border-right: 1px solid rgba(32,32,32,0.1);
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    padding: 44px 36px;
+    background: #f0ead6;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 38px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--orange);
+    opacity: 0.3;
+  }
+
+  /* EXPERIENCE */
+  .exp-item {
+    margin-bottom: 26px;
+    position: relative;
+    padding-left: 18px;
+  }
+
+  .exp-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--orange);
+  }
+
+  .exp-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 2.5px;
+    top: 16px;
+    bottom: -26px;
+    width: 1px;
+    background: var(--orange);
+    opacity: 0.2;
+  }
+
+  .exp-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark);
+    line-height: 1.3;
+  }
+
+  .exp-company {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  .exp-meta {
+    font-size: 11px;
+    color: rgba(32,32,32,0.45);
+    margin-top: 3px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .exp-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .exp-desc {
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: rgba(32,32,32,0.72);
+    margin-top: 8px;
+  }
+
+  .exp-highlights {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .highlight {
+    font-size: 12px;
+    color: rgba(32,32,32,0.68);
+    line-height: 1.55;
+    display: flex;
+    gap: 8px;
+  }
+
+  .highlight::before {
+    content: '→';
+    color: var(--orange);
+    flex-shrink: 0;
+    font-size: 11px;
+    margin-top: 1px;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--orange);
+    color: white;
+    margin-bottom: 6px;
+  }
+
+  .badge-teal { background: var(--teal); }
+  .badge-forest { background: var(--forest); }
+
+  /* SIDEBAR SECTIONS */
+  .sidebar .section-label {
+    color: var(--forest);
+  }
+
+  .sidebar .section-label::after {
+    background: var(--forest);
+  }
+
+  /* ABOUT */
+  .about-text {
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: rgba(32,32,32,0.75);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+
+  /* SKILLS */
+  .skills-group {
+    margin-bottom: 16px;
+  }
+
+  .skills-group-title {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 8px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .skill-tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: rgba(32,32,32,0.07);
+    color: var(--dark);
+  }
+
+  .skill-tag.accent {
+    background: var(--orange);
+    color: white;
+  }
+
+  .skill-tag.teal {
+    background: var(--teal);
+    color: white;
+  }
+
+  .skill-tag.forest {
+    background: var(--forest);
+    color: white;
+  }
+
+  /* RESULTS */
+  .results {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .result-item {
+    background: var(--dark);
+    border-radius: 8px;
+    padding: 12px 14px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .result-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--orange);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .result-desc {
+    font-size: 11px;
+    color: var(--cream);
+    opacity: 0.75;
+    line-height: 1.4;
+    margin-top: 2px;
+  }
+
+  /* EDUCATION */
+  .edu-item {
+    margin-bottom: 12px;
+  }
+
+  .edu-degree {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark);
+  }
+
+  .edu-school {
+    font-size: 11px;
+    color: var(--forest);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  .edu-year {
+    font-size: 11px;
+    color: rgba(32,32,32,0.45);
+    margin-top: 1px;
+  }
+
+  /* LANGUAGES */
+  .lang-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .lang-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--dark);
+  }
+
+  .lang-level {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: rgba(32,32,32,0.45);
+    text-transform: uppercase;
+  }
+
+  .lang-bar {
+    height: 3px;
+    background: rgba(32,32,32,0.1);
+    border-radius: 2px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+
+  .lang-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: var(--teal);
+  }
+
+  /* LINKS */
+  .link-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .link-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex-shrink: 0;
+  }
+
+  .link-text {
+    font-size: 11.5px;
+    color: var(--teal);
+    font-weight: 500;
+  }
+
+  /* DECORATIVE ACCENT */
+  .accent-bar {
+    height: 4px;
+    background: linear-gradient(to right, var(--orange), var(--amber), var(--gold), var(--teal), var(--blue));
+  }
+
+  /* PRINT STYLES */
+  @media print {
+    body { background: white; padding: 0; }
+    .page { width: 210mm; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ACCENT BAR TOP -->
+  <div class="accent-bar"></div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="name-block">
+        <div class="name">Lara <span>Ferrari</span></div>
+        <div class="title">CX Engineer &nbsp;·&nbsp; AI Automation Specialist</div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-item"><span class="dot"></span> Florianópolis, SC · Remoto/Híbrido</div>
+        <div class="contact-item"><span class="dot"></span> itslittlelara@gmail.com</div>
+        <div class="contact-item"><span class="dot"></span> (31) 994-357-644</div>
+        <div class="contact-item"><span class="dot"></span> linkedin.com/in/laraguglielmiferrari</div>
+      </div>
+    </div>
+
+    <div class="tagline">
+      "Transformo operações de atendimento em sistemas inteligentes que rodam sozinhos."
+    </div>
+
+    <div class="pills">
+      <div class="pill pill-orange">n8n</div>
+      <div class="pill pill-orange">Make</div>
+      <div class="pill pill-orange">ManyChat</div>
+      <div class="pill pill-teal">Claude API</div>
+      <div class="pill pill-teal">ChatGPT</div>
+      <div class="pill pill-teal">AI Workflows</div>
+      <div class="pill pill-sage">CX Ops</div>
+      <div class="pill pill-sage">ActiveCampaign</div>
+      <div class="pill pill-gold">WhatsApp API</div>
+      <div class="pill pill-gold">Notion</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- MAIN COLUMN -->
+    <div class="main">
+
+      <!-- EXPERIÊNCIA -->
+      <div class="section">
+        <div class="section-label">Experiência</div>
+
+        <!-- Nowhere Office -->
+        <div class="exp-item">
+          <div class="exp-role">Gestora de Automações e Sistemas com IA</div>
+          <div class="exp-company">Nowhere Office · Consultoria Própria</div>
+          <div class="exp-meta">
+            <span>ago 2024 – presente</span>
+            <span>· 1 ano 10 meses</span>
+            <span>· Remoto</span>
+          </div>
+          <div class="exp-highlights">
+            <div class="highlight">Consultoria em automações inteligentes e IA para PMEs — elimino trabalho manual e crio infraestrutura digital escalável.</div>
+            <div class="highlight">Implemento CRM com agentes de IA, automações via WhatsApp/Instagram, workspaces Notion e integrações entre plataformas.</div>
+            <div class="highlight">Crio sites, landing pages e assets visuais com IA generativa para fortalecer a identidade digital dos clientes.</div>
+          </div>
+        </div>
+
+        <!-- AVO Studio -->
+        <div class="exp-item">
+          <div class="exp-role">Gestora de Automações e Processos com IA</div>
+          <div class="exp-company">AVO Studio · Autônoma</div>
+          <div class="exp-meta">
+            <span>fev 2024 – presente</span>
+            <span>· 2 anos 4 meses</span>
+            <span>· Remoto</span>
+          </div>
+          <div class="exp-highlights">
+            <div class="highlight"><strong>Sandisk Brasil e LATAM:</strong> Automatizei todo o atendimento via ManyChat no Instagram oficial, substituindo empresa terceirizada e reduzindo drasticamente mensagens sem resposta.</div>
+            <div class="highlight">Construí dashboard personalizado integrando ManyChat + Google Sheets via API com App Script, visualizado em interface Lovable.</div>
+            <div class="highlight"><strong>YAZ Nomadic Experiences:</strong> Fluxo automatizado de jornada do lead do primeiro contato à página de vendas, com handoff automático para WhatsApp.</div>
+          </div>
+        </div>
+
+        <!-- Persona -->
+        <div class="exp-item">
+          <div class="exp-role">Gestora de Automações e Processos</div>
+          <div class="exp-company">Persona · Tempo integral</div>
+          <div class="exp-meta">
+            <span>nov 2022 – nov 2024</span>
+            <span>· 2 anos 1 mês</span>
+            <span>· São Paulo · Remoto</span>
+          </div>
+          <div class="exp-highlights">
+            <div class="highlight">Atuei em lançamentos de infoprodutos com mais de <strong>R$1 milhão em vendas cada</strong> — ao menos 3 lançamentos nessa escala — operando automações de atendimento, email e qualificação de leads em alta demanda.</div>
+            <div class="highlight">Desenvolvi fluxos com n8n, Make e ManyChat; configurei ActiveCampaign com segmentação, sequências e triggers comportamentais.</div>
+            <div class="highlight">Treinei assistentes de IA com ChatGPT para cada cliente, calibrando tom de voz e persona para consistência no atendimento automatizado.</div>
+          </div>
+        </div>
+
+        <!-- Keep Nomad -->
+        <div class="exp-item">
+          <div class="exp-role">Customer Service, Support & Operation Head</div>
+          <div class="exp-company">Keep Nomad · Tempo integral</div>
+          <div class="exp-meta">
+            <span>jan 2022 – nov 2022</span>
+            <span>· 11 meses</span>
+            <span>· Online</span>
+          </div>
+          <div class="exp-highlights">
+            <div class="highlight">Reduzi taxa de reembolso em <strong>75%</strong> com atendimento estratégico e comunicação empática em lançamentos de infoprodutos de 7 dígitos.</div>
+            <div class="highlight">Aumentei vendas em <strong>15%</strong> via abordagem ativa e personalizada baseada em análise de dados de potenciais clientes.</div>
+          </div>
+        </div>
+
+        <!-- Experiências anteriores resumidas -->
+        <div class="exp-item">
+          <div class="exp-role">Produção Audiovisual · Início de Carreira</div>
+          <div class="exp-company">NBC Sports · Porta dos Fundos · SP2 Brazil · Keep Nomad · Rock in Rio · Forma Turismo</div>
+          <div class="exp-meta">
+            <span>2015 – 2022</span>
+          </div>
+          <div class="exp-desc">
+            7 anos construindo carreira no audiovisual: <strong>Runner Pool nas Olimpíadas Rio 2016</strong> (NBC Sports, Broadcast Center), <strong>Logger</strong> no Porta dos Fundos (Multishow e Fox), <strong>Direção de Arte</strong> para telões do Rio Open (SP2 Brazil), cobertura de eventos como Rock in Rio, além de produção e edição de conteúdo para YouTube, Instagram e Telegram. Essa base em storytelling visual e produção de conteúdo informa diretamente minha abordagem em CX e comunicação automatizada.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- SOBRE -->
+      <div class="section">
+        <div class="section-label">Sobre</div>
+        <div class="about-text">
+          Especialista em CX e Automações com IA. 7 anos como cineasta, 4 no marketing digital e 2+ anos construindo sistemas que fazem negócios funcionarem sem trabalho manual.
+          <br><br>
+          Nômade digital — tecnologia só importa quando melhora a experiência humana por trás dela.
+        </div>
+      </div>
+
+      <!-- RESULTADOS -->
+      <div class="section">
+        <div class="section-label">Resultados</div>
+        <div class="results">
+          <div class="result-item">
+            <div class="result-num">3+</div>
+            <div class="result-desc">lançamentos de R$1M+ cada, com automações de atendimento e qualificação de leads</div>
+          </div>
+          <div class="result-item">
+            <div class="result-num">−75%</div>
+            <div class="result-desc">na taxa de reembolso com atendimento estratégico</div>
+          </div>
+          <div class="result-item">
+            <div class="result-num">+15%</div>
+            <div class="result-desc">em vendas com abordagem ativa e personalizada</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPETÊNCIAS -->
+      <div class="section">
+        <div class="section-label">Competências</div>
+
+        <div class="skills-group">
+          <div class="skills-group-title">Automação & IA</div>
+          <div class="skill-tags">
+            <span class="skill-tag accent">n8n</span>
+            <span class="skill-tag accent">Make</span>
+            <span class="skill-tag accent">ManyChat</span>
+            <span class="skill-tag accent">Claude API</span>
+            <span class="skill-tag accent">ChatGPT</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <div class="skills-group-title">Marketing & CRM</div>
+          <div class="skill-tags">
+            <span class="skill-tag teal">ActiveCampaign</span>
+            <span class="skill-tag teal">WhatsApp API</span>
+            <span class="skill-tag teal">Instagram API</span>
+            <span class="skill-tag teal">Notion</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <div class="skills-group-title">Desenvolvimento & Dados</div>
+          <div class="skill-tags">
+            <span class="skill-tag forest">Google Sheets</span>
+            <span class="skill-tag forest">App Script</span>
+            <span class="skill-tag forest">SQL</span>
+            <span class="skill-tag forest">Lovable</span>
+            <span class="skill-tag forest">Prompt Eng.</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <div class="skills-group-title">Conteúdo & Design</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Canva</span>
+            <span class="skill-tag">IA Generativa</span>
+            <span class="skill-tag">Premiere Pro</span>
+            <span class="skill-tag">After Effects</span>
+            <span class="skill-tag">Photoshop</span>
+            <span class="skill-tag">DaVinci Resolve</span>
+            <span class="skill-tag">CapCut</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMAÇÃO -->
+      <div class="section">
+        <div class="section-label">Formação</div>
+        <div class="edu-item">
+          <div class="edu-degree">Bacharelado em Cinema</div>
+          <div class="edu-school">Universidade Estácio de Sá</div>
+          <div class="edu-year">2014 – 2018 · Rio de Janeiro</div>
+        </div>
+      </div>
+
+      <!-- IDIOMAS -->
+      <div class="section">
+        <div class="section-label">Idiomas</div>
+
+        <div class="lang-item">
+          <span class="lang-name">Português</span>
+          <span class="lang-level">Nativo</span>
+        </div>
+        <div class="lang-bar"><div class="lang-fill" style="width:100%; background: var(--forest)"></div></div>
+
+        <div class="lang-item">
+          <span class="lang-name">Inglês</span>
+          <span class="lang-level">Fluente</span>
+        </div>
+        <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+
+        <div class="lang-item">
+          <span class="lang-name">Espanhol</span>
+          <span class="lang-level">Básico</span>
+        </div>
+        <div class="lang-bar"><div class="lang-fill" style="width:30%; background: var(--orange)"></div></div>
+
+        <div class="lang-item">
+          <span class="lang-name">Italiano</span>
+          <span class="lang-level">Limitado</span>
+        </div>
+        <div class="lang-bar"><div class="lang-fill" style="width:20%; background: var(--amber)"></div></div>
+      </div>
+
+      <!-- FORMAÇÃO COMPLEMENTAR -->
+      <div class="section">
+        <div class="section-label">Formação Complementar</div>
+
+        <div class="edu-item" style="margin-bottom:14px;">
+          <div class="edu-degree" style="font-size:12px;">Automatik Labs</div>
+          <div class="edu-school" style="font-size:10px;">Curso · em andamento</div>
+          <div class="edu-year">Automação com IA · n8n · Make · CRM</div>
+        </div>
+
+        <div class="edu-item" style="margin-bottom:14px;">
+          <div class="edu-degree" style="font-size:12px;">Escola da Automação</div>
+          <div class="edu-school" style="font-size:10px;">Curso</div>
+          <div class="edu-year">Sistemas e fluxos de automação</div>
+        </div>
+
+        <div class="edu-item" style="margin-bottom:14px;">
+          <div class="edu-degree" style="font-size:12px;">Dev Samurai</div>
+          <div class="edu-school" style="font-size:10px;">Curso · em andamento</div>
+          <div class="edu-year">Desenvolvimento de software</div>
+        </div>
+
+        <div class="edu-item" style="margin-bottom:14px;">
+          <div class="edu-degree" style="font-size:12px;">Hashtag Treinamentos</div>
+          <div class="edu-school" style="font-size:10px;">Curso</div>
+          <div class="edu-year">Lógica de Programação</div>
+        </div>
+
+        <div class="edu-item" style="margin-bottom:14px;">
+          <div class="edu-degree" style="font-size:12px;">Tetr4 Educação</div>
+          <div class="edu-school" style="font-size:10px;">Comunidade</div>
+          <div class="edu-year">IA aplicada a negócios</div>
+        </div>
+
+        <div class="edu-item">
+          <div class="edu-degree" style="font-size:12px;">Tera</div>
+          <div class="edu-school" style="font-size:10px;">Comunidade</div>
+          <div class="edu-year">Tecnologia · Produto · Inovação</div>
+        </div>
+
+        <div class="edu-item" style="margin-top:14px;">
+          <div class="edu-degree" style="font-size:12px;">Bit das Minas</div>
+          <div class="edu-school" style="font-size:10px;">Comunidade</div>
+          <div class="edu-year">Criptomoedas · Mercado Financeiro Digital</div>
+        </div>
+      </div>
+
+      <!-- LINKS -->
+      <div class="section">
+        <div class="section-label">Links</div>
+        <div class="link-item">
+          <div class="link-dot"></div>
+          <div class="link-text">linkedin.com/in/laraguglielmiferrari</div>
+        </div>
+        <div class="link-item">
+          <div class="link-dot" style="background:var(--orange)"></div>
+          <div class="link-text" style="color:var(--deep-orange)">itslittlelara.com</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ACCENT BAR BOTTOM -->
+  <div class="accent-bar"></div>
+
+</div>
+</body>
+</html>
